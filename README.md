@@ -1,3 +1,8 @@
+# Notes
+Future Ideas:
+Make particle heads the different streaming services logs
+Make wizard spin on click, increasing speed with each click
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
