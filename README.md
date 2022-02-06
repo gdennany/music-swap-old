@@ -1,7 +1,24 @@
 # Notes
+TODO:
+
+Add dropdown descriptions onclick on welcome screen
+
 Future Ideas:
+
 Make particle heads the different streaming services logs
+
 Make wizard spin on click, increasing speed with each click
+
+Will probably need to add captcha verification somewhere
+
+
+Notes:
+
+Designs on canva
+
+Remove background from gif's: https://www.unscreen.com
+
+Another gif editor tool: https://ezgif.com/
 
 # Getting Started with Create React App
 

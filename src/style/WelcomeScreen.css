@@ -4,14 +4,21 @@
 }
 
 .Welcome-logo {
-  height: 25vmin;
+  height: 18vmin;
+  padding-top: 5vmin;
+  padding-bottom: 0vmin;
   pointer-events: none;
-  border-radius: 255vmin;
+  padding-bottom: 1vmin;
+}
+
+.Welcome-wizard {
+  height: 45vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .Welcome-logo {
-    animation: Welcome-logo-spin infinite 0s linear;
+  .Welcome-wizard {
+    animation: Welcome-wizard-spin infinite 0s linear;
   }
 }
 
@@ -24,13 +31,13 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-bottom: 1vmin;
   z-index: 1;
 }
 
 .Particle {
   z-index: -1;
 }
-
 
 .Enter-button {
   display:inline-block;
@@ -56,8 +63,11 @@
   background-image: linear-gradient(319deg, #f2cd54 0%, #bca0ff 37%, #91d370 100%);
 }
   
+.hidden-text {
+  size: 0px;
+}
 
-@keyframes Welcome-logo-spin {
+@keyframes Welcome-wizard-spin {
   from {
     transform: rotate(0deg);
   }
