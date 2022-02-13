@@ -30,6 +30,11 @@ export default function WelcomeScreen() {
     setHowToCount(howToCount);
     if (howToCount % 2 === 1) {
       document.getElementById("p2").innerHTML = withHowTo;
+      window.scroll({
+        top: document.body.offsetHeight,
+        left: 0, 
+        behavior: 'smooth',
+      });
     } else {
       document.getElementById("p2").innerHTML = noHowTo;
     }
