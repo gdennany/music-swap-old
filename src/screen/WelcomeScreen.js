@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import ParticleBackground from '../component/ParticleBackground';
 import wizard from '../asset/WIZARD.gif';
-import logo from'../asset/LOGO.png';
+import logoStatic from'../asset/LOGO.png';
+import logoAnimated from'../asset/LOGO.gif';
 import '../style/WelcomeScreen.css';
+
+let DEV_WELCOME_URL = "http://localhost:3000"
 
 export default function WelcomeScreen() {
 
+  let [logoCount, setLogoCount] = useState(0);
   let [descriptionCount, setDescriptionCount] = useState(0);
   let [howToCount, setHowToCount] = useState(0);
+  let [wizardCount, setWizardCount] = useState(0);
 
   const noDescription = "What is this? &#8595;";
   const withDescription = "What is this? &#8595;<br /> <br />And heres The Description";
@@ -37,16 +42,41 @@ export default function WelcomeScreen() {
       });
     } else {
       document.getElementById("p2").innerHTML = noHowTo;
+      window.scroll({
+        top: document.body.offsetTop,
+        left: 0, 
+        behavior: 'smooth',
+      });
+    }
+  }
+
+  function logoClick() {
+    logoCount = logoCount + 1;
+    setLogoCount(logoCount);
+    if (logoCount % 2 === 1) {
+      document.getElementById("logo").src = logoAnimated;
+    } else {
+      document.getElementById("logo").src = logoStatic;
+    }
+  }
+
+  function wizardClick() {
+    wizardCount = wizardCount + 1;
+    setWizardCount(wizardCount);
+    if (wizardCount % 2 === 1) {
+      document.getElementById("wizard").className = "Spin-wizard";
+    } else {
+      document.getElementById("wizard").className = "Welcome-wizard";
     }
   }
 
   return (
     <div className="Welcome">
-      <ParticleBackground />
+      {/*<ParticleBackground />*/}
       <header className="Welcome-header">
-        <img src={logo} className="Welcome-logo" alt="logo" />
-        <img src={wizard} className="Welcome-wizard" alt="wizard" />
-        <a href="/test" ><button className="Enter-button" >Enter Site</button></a>
+        <p className="p" onClick={logoClick}><img id="logo" src={logoStatic} className="Welcome-logo" alt="logo" /></p>
+        <p onClick={wizardClick}><img id="wizard" src={wizard} className="Welcome-wizard" alt="wizard" /></p>
+        <button className="Enter-button"onClick={() => window.location = DEV_WELCOME_URL + "/test"} >Summon Swaps</button>
         <p id="p1" onClick={descriptionClick}>What is this? &#8595;</p>
         <p id="p2" onClick={howToClick}>How do i use it? &#8595;</p>
       </header>

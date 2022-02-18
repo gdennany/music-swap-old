@@ -10,7 +10,6 @@
   width: 35vw;
   height: 80vh;
   text-align:center;
-  background-color: blue;
   margin-top: 10vh;
   margin-bottom: 10vh;
   margin-left: 10vw;
@@ -22,17 +21,10 @@
   width: 35vw;
   height: 80vh;
   text-align:center;
-  background-color: red;
   margin-top: 10vh;
   margin-bottom: 10vh;
   margin-left: 5vw;
   margin-right: 10vw;
-}
-
-.Swap-logo {
-  height: 25vmin;
-  pointer-events: none;
-  border-radius: 255vmin;
 }
 
 .Swap-header {
@@ -45,4 +37,42 @@
   font-size: calc(10px + 2vmin);
   color: white;
   z-index: 1;
+}
+
+.Platform-button {
+  background-color: #aa1d04; 
+  color: white; 
+  border-radius: 2em;
+  border: 1px solid #aa1d04; 
+  width: 76%; 
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 5vh;
+  height: 7vh;
+  text-align: center;
+}
+
+.Platform-button:hover {
+  background-color: #04AA6D;
+  border: 1px solid #04AA6D; 
+  transform: scale(1.2);
+}
+
+.Platform-button-selected {
+  background-color: #04AA6D;
+  color: white; 
+  border-radius: 2em;
+  border: 1px solid #04AA6D; 
+  width: 76%; 
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 5vh;
+  height: 7vh;
+  text-align: center;
+  transform: scale(1.2);
+}
+
+.Platform-image {
+  height: 6vw;
+  width: 6vw;
 }
