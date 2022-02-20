@@ -76,7 +76,7 @@ export default function WelcomeScreen() {
       <header className="Welcome-header">
         <p className="p" onClick={logoClick}><img id="logo" src={logoStatic} className="Welcome-logo" alt="logo" /></p>
         <p onClick={wizardClick}><img id="wizard" src={wizard} className="Welcome-wizard" alt="wizard" /></p>
-        <button className="Enter-button"onClick={() => window.location = DEV_WELCOME_URL + "/test"} >Summon Swaps</button>
+        <button className="Enter-button" onClick={() => window.location = DEV_WELCOME_URL + "/test"} >Enter App</button>
         <p id="p1" onClick={descriptionClick}>What is this? &#8595;</p>
         <p id="p2" onClick={howToClick}>How do i use it? &#8595;</p>
       </header>
