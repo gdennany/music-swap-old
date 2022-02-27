@@ -49,6 +49,8 @@ function PlatformButton({ platform, toFrom }) {
 }
 */
 
+let DEV_WELCOME_URL = "http://localhost:3000"
+
 function SwapScreen() {
   let NS = "NOT_SELECTED";
   let platforms = ["Spotify", "Apple", "Amazon", "Tidal"];
@@ -81,8 +83,8 @@ function SwapScreen() {
   };
 
   useEffect(() => {
-    if (fromPlatformText != NS || toPlatformText != NS) {
-      if (fromPlatformText == toPlatformText) {
+    if (fromPlatformText !== NS || toPlatformText !== NS) {
+      if (fromPlatformText === toPlatformText) {
         if (document.getElementById("To" + toPlatformText).className === "Platform-button-selected") {
           setFromPlatformText(NS);
         } else {
@@ -90,7 +92,7 @@ function SwapScreen() {
         }
       }
     };
-    if (fromPlatformText != NS && toPlatformText != NS) {
+    if (fromPlatformText !== NS && toPlatformText !== NS) {
       setSummonSwapVisibilty("visible");
     } else {
       setSummonSwapVisibilty("hidden");
@@ -144,7 +146,7 @@ function SwapScreen() {
         </div>
         <div>
           <p style={{padding:"15px", textAlign:"cent"}}>You will be swapping music from your {fromPlatformText} library to your {toPlatformText} library.</p>
-          <button className="Summon-button" style={{visibility: summonSwapVisibilty}}>Initiate Swapping Sequence</button>
+          <button className="Summon-button" style={{visibility: summonSwapVisibilty}} onClick={() => window.location = `${DEV_WELCOME_URL}/initiate-swaps?from=${fromPlatform}&to=${toPlatform}` }>Initiate Swapping Sequence</button>
         </div>
       </header>
       
